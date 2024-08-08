@@ -16,3 +16,7 @@ FROM base as test
 ENV NODE_ENV=test
 COPY . .
 RUN npm run test
+
+FROM base as prod
+COPY . .
+CMD ["npm", "run", "dev"]
